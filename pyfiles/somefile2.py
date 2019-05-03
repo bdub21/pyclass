@@ -8,6 +8,6 @@ from getpass import getpass
 
 net_connect.enable()
 print(net_connect.find_prompt())
-
+#print(something)
 output = net_connect.send_command('sh cdp ne detail', delay_factor=2)
 print (output)
