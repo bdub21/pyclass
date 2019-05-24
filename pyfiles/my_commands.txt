@@ -1,0 +1,10 @@
+VLAN 100
+name lab
+VLAN 200
+name prod
+VLAN 300
+name dev
+VLAN 400
+name stage
+VLAN 500
+name wifi
