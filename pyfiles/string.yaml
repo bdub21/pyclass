@@ -1,0 +1,25 @@
+---
+- some_string
+- "a string that may have words"
+- null
+# Booleans
+- True
+- False
+- true
+- false
+- on
+- off
+- yes
+- no
+# Strings
+- 'yes'
+- 'no'
+- |
+    Add multiline string
+    repeat to next line
+    blah blah
+    blay blay
+- >
+    Another way to write this
+    so no next line
+    something something

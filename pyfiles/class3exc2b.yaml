@@ -1,0 +1,21 @@
+---
+
+device_name: cisco1
+host: cisco1.lasthop.io
+username: admin
+password: nopass
+
+device_name: cisco2
+host: cisco2.lasthop.io
+username: admin
+password: nopass
+
+device_name: cisco3
+host: cisco3.lasthop.io
+username: admin
+password: nopass
+
+device_name: cisco4
+host: cisco4.lasthop.io
+username: admin
+password: nopass

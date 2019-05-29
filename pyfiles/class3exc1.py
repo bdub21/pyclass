@@ -1,33 +1,26 @@
-#!/usr/bin/env python
-#Get show_version & show_lldp from cisco4 in lab
+import re
+from pprint import pprint
 
+arp_data = """
+Protocol  Address          Age (min)  Hardware Addr   Type   Interface
+Internet  10.220.88.1            67   0062.ec29.70fe  ARPA   GigabitEthernet0/0/0
+Internet  10.220.88.20           29   c89c.1dea.0eb6  ARPA   GigabitEthernet0/0/0
+Internet  10.220.88.22            -   a093.5141.b780  ARPA   GigabitEthernet0/0/0
+Internet  10.220.88.37          104   0001.00ff.0001  ARPA   GigabitEthernet0/0/0
+Internet  10.220.88.38          161   0002.00ff.0001  ARPA   GigabitEthernet0/0/0
+"""
 
-from netmiko import ConnectHandler
-from datetime import datetime
-from getpass import getpass
+arp_data = arp_data.strip()
+arp_list = arp_data.splitlines()
 
-cisco_ios = {
-        'device_type': 'cisco_ios',
-        'ip': 'cisco1.lasthop.io',
-        'username': 'pyclass',
-        'password': getpass(),
-        'session_log': 'my_arpoutput.txt',
-}
+processed_list = []
+for arp_entry in arp_list:
+    if re.search(r"^Protocol.*Interface", arp_entry):
+        continue
+    _, ip_addr, _, mac_addr, _, intf = arp_entry.split()
+    arp_dict = {"mac_addr": mac_addr, "ip_addr": ip_addr, "interface": intf}
+    processed_list.append(arp_dict)
 
-net_connect = ConnectHandler (**cisco_ios)
-print (net_connect.find_prompt())
-
-output = net_connect.send_command('show ip arp', use_textfsm=True)
-
-new_intf = output[0]
-
-#['mac']['address']['interface']
-
-for intf in new_intf.items():
-    print(intf['mac'])
-    print()
-
-#output = net_connect.send_command('show lldp neighbors', use_textfsm=True)
-#print (output)
-
-net_connect.disconnect()
+print()
+pprint(processed_list)
+print()
