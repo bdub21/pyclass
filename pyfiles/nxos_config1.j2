@@ -1,6 +1,5 @@
-name {{ nxos_host1 }}
-interface {{ intf_nxos }}
-ip address {{ network1 }}
-name {{ nxos_host2 }}
-interface {{ intf_nxos }}
-ip address {{ network2 }}
+interface {{ intf1_nxos }}
+  ip address {{ network1 }}
+router bgp {{ remote_as }}
+  neighbor {{ network2 }} remote-as {{ remote_as }}
+    address-family ipv4 unicast
