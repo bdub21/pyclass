@@ -1,0 +1,981 @@
+
+vrf definition blue1
+rd 1
+!
+ address-family ipv4
+  route-target export 100:1
+  route-target import 100:1
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:1
+  route-target import 100:1
+ exit-address-family
+ !
+vrf definition blue1
+rd 2
+!
+ address-family ipv4
+  route-target export 100:2
+  route-target import 100:2
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:2
+  route-target import 100:2
+ exit-address-family
+ !
+vrf definition blue1
+rd 3
+!
+ address-family ipv4
+  route-target export 100:3
+  route-target import 100:3
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:3
+  route-target import 100:3
+ exit-address-family
+ !
+vrf definition blue1
+rd 4
+!
+ address-family ipv4
+  route-target export 100:4
+  route-target import 100:4
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:4
+  route-target import 100:4
+ exit-address-family
+ !
+vrf definition blue1
+rd 5
+!
+ address-family ipv4
+  route-target export 100:5
+  route-target import 100:5
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:5
+  route-target import 100:5
+ exit-address-family
+ !
+vrf definition blue2
+rd 1
+!
+ address-family ipv4
+  route-target export 100:1
+  route-target import 100:1
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:1
+  route-target import 100:1
+ exit-address-family
+ !
+vrf definition blue2
+rd 2
+!
+ address-family ipv4
+  route-target export 100:2
+  route-target import 100:2
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:2
+  route-target import 100:2
+ exit-address-family
+ !
+vrf definition blue2
+rd 3
+!
+ address-family ipv4
+  route-target export 100:3
+  route-target import 100:3
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:3
+  route-target import 100:3
+ exit-address-family
+ !
+vrf definition blue2
+rd 4
+!
+ address-family ipv4
+  route-target export 100:4
+  route-target import 100:4
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:4
+  route-target import 100:4
+ exit-address-family
+ !
+vrf definition blue2
+rd 5
+!
+ address-family ipv4
+  route-target export 100:5
+  route-target import 100:5
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:5
+  route-target import 100:5
+ exit-address-family
+ !
+vrf definition blue3
+rd 1
+!
+ address-family ipv4
+  route-target export 100:1
+  route-target import 100:1
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:1
+  route-target import 100:1
+ exit-address-family
+ !
+vrf definition blue3
+rd 2
+!
+ address-family ipv4
+  route-target export 100:2
+  route-target import 100:2
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:2
+  route-target import 100:2
+ exit-address-family
+ !
+vrf definition blue3
+rd 3
+!
+ address-family ipv4
+  route-target export 100:3
+  route-target import 100:3
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:3
+  route-target import 100:3
+ exit-address-family
+ !
+vrf definition blue3
+rd 4
+!
+ address-family ipv4
+  route-target export 100:4
+  route-target import 100:4
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:4
+  route-target import 100:4
+ exit-address-family
+ !
+vrf definition blue3
+rd 5
+!
+ address-family ipv4
+  route-target export 100:5
+  route-target import 100:5
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:5
+  route-target import 100:5
+ exit-address-family
+ !
+vrf definition blue4
+rd 1
+!
+ address-family ipv4
+  route-target export 100:1
+  route-target import 100:1
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:1
+  route-target import 100:1
+ exit-address-family
+ !
+vrf definition blue4
+rd 2
+!
+ address-family ipv4
+  route-target export 100:2
+  route-target import 100:2
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:2
+  route-target import 100:2
+ exit-address-family
+ !
+vrf definition blue4
+rd 3
+!
+ address-family ipv4
+  route-target export 100:3
+  route-target import 100:3
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:3
+  route-target import 100:3
+ exit-address-family
+ !
+vrf definition blue4
+rd 4
+!
+ address-family ipv4
+  route-target export 100:4
+  route-target import 100:4
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:4
+  route-target import 100:4
+ exit-address-family
+ !
+vrf definition blue4
+rd 5
+!
+ address-family ipv4
+  route-target export 100:5
+  route-target import 100:5
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:5
+  route-target import 100:5
+ exit-address-family
+ !
+vrf definition blue5
+rd 1
+!
+ address-family ipv4
+  route-target export 100:1
+  route-target import 100:1
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:1
+  route-target import 100:1
+ exit-address-family
+ !
+vrf definition blue5
+rd 2
+!
+ address-family ipv4
+  route-target export 100:2
+  route-target import 100:2
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:2
+  route-target import 100:2
+ exit-address-family
+ !
+vrf definition blue5
+rd 3
+!
+ address-family ipv4
+  route-target export 100:3
+  route-target import 100:3
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:3
+  route-target import 100:3
+ exit-address-family
+ !
+vrf definition blue5
+rd 4
+!
+ address-family ipv4
+  route-target export 100:4
+  route-target import 100:4
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:4
+  route-target import 100:4
+ exit-address-family
+ !
+vrf definition blue5
+rd 5
+!
+ address-family ipv4
+  route-target export 100:5
+  route-target import 100:5
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:5
+  route-target import 100:5
+ exit-address-family
+ !
+
+
+vrf definition blue1
+rd 1
+!
+ address-family ipv4
+  route-target export 100:1
+  route-target import 100:1
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:1
+  route-target import 100:1
+ exit-address-family
+ !
+vrf definition blue1
+rd 2
+!
+ address-family ipv4
+  route-target export 100:2
+  route-target import 100:2
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:2
+  route-target import 100:2
+ exit-address-family
+ !
+vrf definition blue1
+rd 3
+!
+ address-family ipv4
+  route-target export 100:3
+  route-target import 100:3
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:3
+  route-target import 100:3
+ exit-address-family
+ !
+vrf definition blue1
+rd 4
+!
+ address-family ipv4
+  route-target export 100:4
+  route-target import 100:4
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:4
+  route-target import 100:4
+ exit-address-family
+ !
+vrf definition blue1
+rd 5
+!
+ address-family ipv4
+  route-target export 100:5
+  route-target import 100:5
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:5
+  route-target import 100:5
+ exit-address-family
+ !
+vrf definition blue2
+rd 1
+!
+ address-family ipv4
+  route-target export 100:1
+  route-target import 100:1
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:1
+  route-target import 100:1
+ exit-address-family
+ !
+vrf definition blue2
+rd 2
+!
+ address-family ipv4
+  route-target export 100:2
+  route-target import 100:2
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:2
+  route-target import 100:2
+ exit-address-family
+ !
+vrf definition blue2
+rd 3
+!
+ address-family ipv4
+  route-target export 100:3
+  route-target import 100:3
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:3
+  route-target import 100:3
+ exit-address-family
+ !
+vrf definition blue2
+rd 4
+!
+ address-family ipv4
+  route-target export 100:4
+  route-target import 100:4
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:4
+  route-target import 100:4
+ exit-address-family
+ !
+vrf definition blue2
+rd 5
+!
+ address-family ipv4
+  route-target export 100:5
+  route-target import 100:5
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:5
+  route-target import 100:5
+ exit-address-family
+ !
+vrf definition blue3
+rd 1
+!
+ address-family ipv4
+  route-target export 100:1
+  route-target import 100:1
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:1
+  route-target import 100:1
+ exit-address-family
+ !
+vrf definition blue3
+rd 2
+!
+ address-family ipv4
+  route-target export 100:2
+  route-target import 100:2
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:2
+  route-target import 100:2
+ exit-address-family
+ !
+vrf definition blue3
+rd 3
+!
+ address-family ipv4
+  route-target export 100:3
+  route-target import 100:3
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:3
+  route-target import 100:3
+ exit-address-family
+ !
+vrf definition blue3
+rd 4
+!
+ address-family ipv4
+  route-target export 100:4
+  route-target import 100:4
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:4
+  route-target import 100:4
+ exit-address-family
+ !
+vrf definition blue3
+rd 5
+!
+ address-family ipv4
+  route-target export 100:5
+  route-target import 100:5
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:5
+  route-target import 100:5
+ exit-address-family
+ !
+vrf definition blue4
+rd 1
+!
+ address-family ipv4
+  route-target export 100:1
+  route-target import 100:1
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:1
+  route-target import 100:1
+ exit-address-family
+ !
+vrf definition blue4
+rd 2
+!
+ address-family ipv4
+  route-target export 100:2
+  route-target import 100:2
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:2
+  route-target import 100:2
+ exit-address-family
+ !
+vrf definition blue4
+rd 3
+!
+ address-family ipv4
+  route-target export 100:3
+  route-target import 100:3
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:3
+  route-target import 100:3
+ exit-address-family
+ !
+vrf definition blue4
+rd 4
+!
+ address-family ipv4
+  route-target export 100:4
+  route-target import 100:4
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:4
+  route-target import 100:4
+ exit-address-family
+ !
+vrf definition blue4
+rd 5
+!
+ address-family ipv4
+  route-target export 100:5
+  route-target import 100:5
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:5
+  route-target import 100:5
+ exit-address-family
+ !
+vrf definition blue5
+rd 1
+!
+ address-family ipv4
+  route-target export 100:1
+  route-target import 100:1
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:1
+  route-target import 100:1
+ exit-address-family
+ !
+vrf definition blue5
+rd 2
+!
+ address-family ipv4
+  route-target export 100:2
+  route-target import 100:2
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:2
+  route-target import 100:2
+ exit-address-family
+ !
+vrf definition blue5
+rd 3
+!
+ address-family ipv4
+  route-target export 100:3
+  route-target import 100:3
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:3
+  route-target import 100:3
+ exit-address-family
+ !
+vrf definition blue5
+rd 4
+!
+ address-family ipv4
+  route-target export 100:4
+  route-target import 100:4
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:4
+  route-target import 100:4
+ exit-address-family
+ !
+vrf definition blue5
+rd 5
+!
+ address-family ipv4
+  route-target export 100:5
+  route-target import 100:5
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:5
+  route-target import 100:5
+ exit-address-family
+ !
+
+
+vrf definition blue1
+rd 1
+!
+ address-family ipv4
+  route-target export 100:1
+  route-target import 100:1
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:1
+  route-target import 100:1
+ exit-address-family
+ !
+vrf definition blue1
+rd 2
+!
+ address-family ipv4
+  route-target export 100:2
+  route-target import 100:2
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:2
+  route-target import 100:2
+ exit-address-family
+ !
+vrf definition blue1
+rd 3
+!
+ address-family ipv4
+  route-target export 100:3
+  route-target import 100:3
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:3
+  route-target import 100:3
+ exit-address-family
+ !
+vrf definition blue1
+rd 4
+!
+ address-family ipv4
+  route-target export 100:4
+  route-target import 100:4
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:4
+  route-target import 100:4
+ exit-address-family
+ !
+vrf definition blue1
+rd 5
+!
+ address-family ipv4
+  route-target export 100:5
+  route-target import 100:5
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:5
+  route-target import 100:5
+ exit-address-family
+ !
+vrf definition blue2
+rd 1
+!
+ address-family ipv4
+  route-target export 100:1
+  route-target import 100:1
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:1
+  route-target import 100:1
+ exit-address-family
+ !
+vrf definition blue2
+rd 2
+!
+ address-family ipv4
+  route-target export 100:2
+  route-target import 100:2
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:2
+  route-target import 100:2
+ exit-address-family
+ !
+vrf definition blue2
+rd 3
+!
+ address-family ipv4
+  route-target export 100:3
+  route-target import 100:3
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:3
+  route-target import 100:3
+ exit-address-family
+ !
+vrf definition blue2
+rd 4
+!
+ address-family ipv4
+  route-target export 100:4
+  route-target import 100:4
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:4
+  route-target import 100:4
+ exit-address-family
+ !
+vrf definition blue2
+rd 5
+!
+ address-family ipv4
+  route-target export 100:5
+  route-target import 100:5
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:5
+  route-target import 100:5
+ exit-address-family
+ !
+vrf definition blue3
+rd 1
+!
+ address-family ipv4
+  route-target export 100:1
+  route-target import 100:1
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:1
+  route-target import 100:1
+ exit-address-family
+ !
+vrf definition blue3
+rd 2
+!
+ address-family ipv4
+  route-target export 100:2
+  route-target import 100:2
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:2
+  route-target import 100:2
+ exit-address-family
+ !
+vrf definition blue3
+rd 3
+!
+ address-family ipv4
+  route-target export 100:3
+  route-target import 100:3
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:3
+  route-target import 100:3
+ exit-address-family
+ !
+vrf definition blue3
+rd 4
+!
+ address-family ipv4
+  route-target export 100:4
+  route-target import 100:4
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:4
+  route-target import 100:4
+ exit-address-family
+ !
+vrf definition blue3
+rd 5
+!
+ address-family ipv4
+  route-target export 100:5
+  route-target import 100:5
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:5
+  route-target import 100:5
+ exit-address-family
+ !
+vrf definition blue4
+rd 1
+!
+ address-family ipv4
+  route-target export 100:1
+  route-target import 100:1
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:1
+  route-target import 100:1
+ exit-address-family
+ !
+vrf definition blue4
+rd 2
+!
+ address-family ipv4
+  route-target export 100:2
+  route-target import 100:2
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:2
+  route-target import 100:2
+ exit-address-family
+ !
+vrf definition blue4
+rd 3
+!
+ address-family ipv4
+  route-target export 100:3
+  route-target import 100:3
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:3
+  route-target import 100:3
+ exit-address-family
+ !
+vrf definition blue4
+rd 4
+!
+ address-family ipv4
+  route-target export 100:4
+  route-target import 100:4
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:4
+  route-target import 100:4
+ exit-address-family
+ !
+vrf definition blue4
+rd 5
+!
+ address-family ipv4
+  route-target export 100:5
+  route-target import 100:5
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:5
+  route-target import 100:5
+ exit-address-family
+ !
+vrf definition blue5
+rd 1
+!
+ address-family ipv4
+  route-target export 100:1
+  route-target import 100:1
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:1
+  route-target import 100:1
+ exit-address-family
+ !
+vrf definition blue5
+rd 2
+!
+ address-family ipv4
+  route-target export 100:2
+  route-target import 100:2
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:2
+  route-target import 100:2
+ exit-address-family
+ !
+vrf definition blue5
+rd 3
+!
+ address-family ipv4
+  route-target export 100:3
+  route-target import 100:3
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:3
+  route-target import 100:3
+ exit-address-family
+ !
+vrf definition blue5
+rd 4
+!
+ address-family ipv4
+  route-target export 100:4
+  route-target import 100:4
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:4
+  route-target import 100:4
+ exit-address-family
+ !
+vrf definition blue5
+rd 5
+!
+ address-family ipv4
+  route-target export 100:5
+  route-target import 100:5
+ exit-address-family
+ !
+  address-family ipv6
+  route-target export 100:5
+  route-target import 100:5
+ exit-address-family
+ !
+
