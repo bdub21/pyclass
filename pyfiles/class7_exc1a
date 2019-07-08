@@ -1,0 +1,492 @@
+n [1]: import xml.etree.ElementTree as etree                                                                                                                  
+
+In [2]: etree.parse('show_security_zones.xml')                                                                                                                
+Out[2]: <xml.etree.ElementTree.ElementTree at 0x7f3bd5698908>
+
+In [3]: etree.parse('show_security_zones.xml').getroot()                                                                                                      
+Out[3]: <Element 'zones-information' at 0x7f3bd5489bd8>
+In [6]: xml_string = """ 
+   ...: <zones-information> 
+   ...:     <zones-security> 
+   ...:             <zones-security-zonename>trust</zones-security-zonename> 
+   ...:                     <zones-security-send-reset>Off</zones-security-send-reset> 
+   ...:                             <zones-security-policy-configurable>Yes</zones-security-policy-configurable> 
+   ...:                                     <zones-security-interfaces-bound>1</zones-security-interfaces-bound> 
+   ...:                                             <zones-security-interfaces> 
+   ...:                                                         <zones-security-interface-name>vlan.0</zones-security-interface-name> 
+   ...:                                                                 </zones-security-interfaces> 
+   ...:                                                                     </zones-security> 
+   ...:                                                                         <zones-security> 
+   ...:                                                                                 <zones-security-zonename>untrust</zones-security-zonename> 
+   ...:                                                                                         <zones-security-send-reset>Off</zones-security-send-reset> 
+   ...:                                                                                                 <zones-security-policy-configurable>Yes</zones-securit
+   ...: y-policy-configurable> 
+   ...:                                                                                                         <zones-security-screen>untrust-screen</zones-s
+   ...: ecurity-screen> 
+   ...:                                                                                                                 <zones-security-interfaces-bound>2</zo
+   ...: nes-security-interfaces-bound> 
+   ...:                                                                                                                         <zones-security-interfaces> 
+   ...:                                                                                                                                     <zones-security-in
+   ...: terface-name>fe-0/0/0.0</zones-security-interface-name> 
+   ...:                                                                                                                                                 <zones
+   ...: -security-interface-name>pt-1/0/0.0</zones-security-interface-name> 
+   ...:                                                                                                                                                       
+   ...:   </zones-security-interfaces> 
+   ...:                                                                                                                                                       
+   ...:       </zones-security> 
+   ...:                                                                                                                                                       
+   ...:           <zones-security> 
+   ...:                                                                                                                                                       
+   ...:                   <zones-security-zonename>junos-host</zones-security-zonename> 
+   ...:                                                                                                                                                       
+   ...:                           <zones-security-send-reset>Off</zones-security-send-reset> 
+   ...:                                                                                                                                                       
+   ...:                                   <zones-security-policy-configurable>Yes</zones-security-policy-configurable> 
+   ...:                                                                                                                                                       
+   ...:                                           <zones-security-interfaces-bound>0</zones-security-interfaces-bound> 
+   ...:                                                                                                                                                       
+   ...:                                                   <zones-security-interfaces> 
+   ...:                                                                                                                                                       
+   ...:                                                           </zones-security-interfaces> 
+   ...:                                                                                                                                                       
+   ...:                                                               </zones-security> 
+   ...:                                                                                                                                                       
+   ...:                                                               </zones-information> 
+   ...:                                                                                                                                                       
+   ...:                                                               """                                                                                     
+
+In [7]: etree.fromstring(xml_string.strip())                                                                                                                  
+Out[7]: <Element 'zones-information' at 0x7f3bd4fca1d8>
+
+In [8]: my_xml = etree.fromstring(xml_string.strip())                                                                                                         
+
+In [9]: my_xml                                                                                                                                                
+Out[9]: <Element 'zones-information' at 0x7f3bd4eed048>  
+
+In [11]: etree.tostring(my_xml)                                                                                                                               
+Out[11]: b'<zones-information>\n    <zones-security>\n        <zones-security-zonename>trust</zones-security-zonename>\n        <zones-security-send-reset>Off</zones-security-send-reset>\n        <zones-security-policy-configurable>Yes</zones-security-policy-configurable>\n        <zones-security-interfaces-bound>1</zones-security-interfaces-bound>\n        <zones-security-interfaces>\n            <zones-security-interface-name>vlan.0</zones-security-interface-name>\n        </zones-security-interfaces>\n    </zones-security>\n    <zones-security>\n        <zones-security-zonename>untrust</zones-security-zonename>\n        <zones-security-send-reset>Off</zones-security-send-reset>\n        <zones-security-policy-configurable>Yes</zones-security-policy-configurable>\n        <zones-security-screen>untrust-screen</zones-security-screen>\n        <zones-security-interfaces-bound>2</zones-security-interfaces-bound>\n        <zones-security-interfaces>\n            <zones-security-interface-name>fe-0/0/0.0</zones-security-interface-name>\n            <zones-security-interface-name>pt-1/0/0.0</zones-security-interface-name>\n        </zones-security-interfaces>\n    </zones-security>\n    <zones-security>\n        <zones-security-zonename>junos-host</zones-security-zonename>\n        <zones-security-send-reset>Off</zones-security-send-reset>\n        <zones-security-policy-configurable>Yes</zones-security-policy-configurable>\n        <zones-security-interfaces-bound>0</zones-security-interfaces-bound>\n        <zones-security-interfaces>\n        </zones-security-interfaces>\n    </zones-security>\n</zones-information>'
+
+In [12]: etree.tostring(my_xml).decode()                                                                                                                      
+Out[12]: '<zones-information>\n    <zones-security>\n        <zones-security-zonename>trust</zones-security-zonename>\n        <zones-security-send-reset>Off</zones-security-send-reset>\n        <zones-security-policy-configurable>Yes</zones-security-policy-configurable>\n        <zones-security-interfaces-bound>1</zones-security-interfaces-bound>\n        <zones-security-interfaces>\n            <zones-security-interface-name>vlan.0</zones-security-interface-name>\n        </zones-security-interfaces>\n    </zones-security>\n    <zones-security>\n        <zones-security-zonename>untrust</zones-security-zonename>\n        <zones-security-send-reset>Off</zones-security-send-reset>\n        <zones-security-policy-configurable>Yes</zones-security-policy-configurable>\n        <zones-security-screen>untrust-screen</zones-security-screen>\n        <zones-security-interfaces-bound>2</zones-security-interfaces-bound>\n        <zones-security-interfaces>\n            <zones-security-interface-name>fe-0/0/0.0</zones-security-interface-name>\n            <zones-security-interface-name>pt-1/0/0.0</zones-security-interface-name>\n        </zones-security-interfaces>\n    </zones-security>\n    <zones-security>\n        <zones-security-zonename>junos-host</zones-security-zonename>\n        <zones-security-send-reset>Off</zones-security-send-reset>\n        <zones-security-policy-configurable>Yes</zones-security-policy-configurable>\n        <zones-security-interfaces-bound>0</zones-security-interfaces-bound>\n        <zones-security-interfaces>\n        </zones-security-interfaces>\n    </zones-security>\n</zones-information>'
+
+In [13]: print(etree.tostring(my_xml).decode())                                                                                                               
+<zones-information>
+    <zones-security>
+        <zones-security-zonename>trust</zones-security-zonename>
+        <zones-security-send-reset>Off</zones-security-send-reset>
+        <zones-security-policy-configurable>Yes</zones-security-policy-configurable>
+        <zones-security-interfaces-bound>1</zones-security-interfaces-bound>
+        <zones-security-interfaces>
+            <zones-security-interface-name>vlan.0</zones-security-interface-name>
+        </zones-security-interfaces>
+    </zones-security>
+    <zones-security>
+        <zones-security-zonename>untrust</zones-security-zonename>
+        <zones-security-send-reset>Off</zones-security-send-reset>
+        <zones-security-policy-configurable>Yes</zones-security-policy-configurable>
+        <zones-security-screen>untrust-screen</zones-security-screen>
+        <zones-security-interfaces-bound>2</zones-security-interfaces-bound>
+        <zones-security-interfaces>
+            <zones-security-interface-name>fe-0/0/0.0</zones-security-interface-name>
+            <zones-security-interface-name>pt-1/0/0.0</zones-security-interface-name>
+        </zones-security-interfaces>
+    </zones-security>
+    <zones-security>
+        <zones-security-zonename>junos-host</zones-security-zonename>
+        <zones-security-send-reset>Off</zones-security-send-reset>
+        <zones-security-policy-configurable>Yes</zones-security-policy-configurable>
+        <zones-security-interfaces-bound>0</zones-security-interfaces-bound>
+        <zones-security-interfaces>
+        </zones-security-interfaces>
+    </zones-security>
+</zones-information>
+
+In [13]: my_xml.getchildren()                                                                                                                                 
+Out[13]: 
+[<Element 'zones-security' at 0x7f3bd5029818>,
+ <Element 'zones-security' at 0x7f3bd4fca408>,
+ <Element 'zones-security' at 0x7f3bd4baa778>]
+
+In [14]: child[0]                                                                                                                                             
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-14-2c707b45f1c0> in <module>
+----> 1 child[0]
+
+NameError: name 'child' is not defined
+
+In [15]: my_xml.getchildren()                                                                                                                                 
+Out[15]: 
+[<Element 'zones-security' at 0x7f3bd5029818>,
+ <Element 'zones-security' at 0x7f3bd4fca408>,
+ <Element 'zones-security' at 0x7f3bd4baa778>]
+
+In [16]: myxml[0]                                                                                                                                             
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-16-ba3d43a93774> in <module>
+----> 1 myxml[0]
+
+NameError: name 'myxml' is not defined
+
+In [17]: my_xml[0]                                                                                                                                            
+Out[17]: <Element 'zones-security' at 0x7f3bd5029818>
+
+In [18]: truzt_zone = my_xml[0]                                                                                                                               
+
+In [19]: my_xml.getchildren()[0]                                                                                                                              
+Out[19]: <Element 'zones-security' at 0x7f3bd5029818>
+
+In [20]: my_xml.getchildren()[1]                                                                                                                              
+Out[20]: <Element 'zones-security' at 0x7f3bd4fca408>
+
+In [21]: my_xml.getchildren()[0][0]                                                                                                                           
+Out[21]: <Element 'zones-security-zonename' at 0x7f3bd5029d18>
+
+In [22]: trust_zone[0]                                                                                                                                        
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-22-b5c6fbc37f48> in <module>
+----> 1 trust_zone[0]
+
+NameError: name 'trust_zone' is not defined
+
+In [23]: trust_zone.getchildren()                                                                                                                             
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-23-cb2a1fe7406d> in <module>
+----> 1 trust_zone.getchildren()
+
+NameError: name 'trust_zone' is not defined
+
+In [24]: truzt_zone[0]                                                                                                                                        
+Out[24]: <Element 'zones-security-zonename' at 0x7f3bd5029d18>
+
+In [25]: truzt_zone[0][0]                                                                                                                                     
+---------------------------------------------------------------------------
+IndexError                                Traceback (most recent call last)
+<ipython-input-25-ca95069f5377> in <module>
+----> 1 truzt_zone[0][0]
+
+IndexError: child index out of range
+
+In [26]: truzt_zone.getchildren()                                                                                                                             
+Out[26]: 
+[<Element 'zones-security-zonename' at 0x7f3bd5029d18>,
+ <Element 'zones-security-send-reset' at 0x7f3bd52b2a98>,
+ <Element 'zones-security-policy-configurable' at 0x7f3bd52b2728>,
+ <Element 'zones-security-interfaces-bound' at 0x7f3bd4fca638>,
+ <Element 'zones-security-interfaces' at 0x7f3bd4fcaa98>]
+
+In [27]: truzt_zone.getchildren()[0]                                                                                                                          
+Out[27]: <Element 'zones-security-zonename' at 0x7f3bd5029d18>
+
+In [28]: truzt_zone.getchildren()[0][0]                                                                                                                       
+---------------------------------------------------------------------------
+IndexError                                Traceback (most recent call last)
+<ipython-input-28-829198a2cf92> in <module>
+----> 1 truzt_zone.getchildren()[0][0]
+
+IndexError: child index out of range
+
+In [29]: truzt_zone.getchildren()[0][1]                                                                                                                       
+---------------------------------------------------------------------------
+IndexError                                Traceback (most recent call last)
+<ipython-input-29-a4323ec390d9> in <module>
+----> 1 truzt_zone.getchildren()[0][1]
+
+IndexError: child index out of range
+
+In [30]: trust_zone = truzt.zone[0]                                                                                                                           
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-30-eab31e8a391f> in <module>
+----> 1 trust_zone = truzt.zone[0]
+
+NameError: name 'truzt' is not defined
+
+In [31]: trust_zone = truzt_zone[0]                                                                                                                           
+
+In [32]: trust_zone.getchildren()                                                                                                                             
+Out[32]: []
+
+In [33]: trust_zone.len()                                                                                                                                     
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-33-a597761b4de7> in <module>
+----> 1 trust_zone.len()
+
+AttributeError: 'xml.etree.ElementTree.Element' object has no attribute 'len'
+
+In [34]: truzt_zone.len()                                                                                                                                     
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-34-63f863c428ce> in <module>
+----> 1 truzt_zone.len()
+
+AttributeError: 'xml.etree.ElementTree.Element' object has no attribute 'len'
+
+In [35]: trust_zone.tag                                                                                                                                       
+Out[35]: 'zones-security-zonename'
+
+In [36]: dir(my_xml)                                                                                                                                          
+Out[36]: 
+['__class__',
+ '__copy__',
+ '__deepcopy__',
+ '__delattr__',
+ '__delitem__',
+ '__dir__',
+ '__doc__',
+ '__eq__',
+ '__format__',
+ '__ge__',
+ '__getattribute__',
+ '__getitem__',
+ '__getstate__',
+ '__gt__',
+ '__hash__',
+ '__init__',
+ '__init_subclass__',
+ '__le__',
+ '__len__',
+ '__lt__',
+ '__ne__',
+ '__new__',
+ '__reduce__',
+ '__reduce_ex__',
+ '__repr__',
+ '__setattr__',
+ '__setitem__',
+ '__setstate__',
+ '__sizeof__',
+ '__str__',
+ '__subclasshook__',
+ 'append',
+ 'attrib',
+ 'clear',
+ 'extend',
+ 'find',
+ 'findall',
+ 'findtext',
+ 'get',
+ 'getchildren',
+ 'getiterator',
+ 'insert',
+ 'items',
+ 'iter',
+ 'iterfind',
+ 'itertext',
+ 'keys',
+ 'makeelement',
+ 'remove',
+ 'set',
+ 'tag',
+ 'tail',
+ 'text']
+
+In [37]: trust_zone.kes                                                                                                                                       
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-37-a143bfec0944> in <module>
+----> 1 trust_zone.kes
+
+AttributeError: 'xml.etree.ElementTree.Element' object has no attribute 'kes'
+
+In [38]: trust_zone.keys                                                                                                                                      
+Out[38]: <function Element.keys()>
+
+In [39]: trust_zone.getchildren                                                                                                                               
+Out[39]: <function Element.getchildren()>
+
+In [40]: trust_zone.getchildren()                                                                                                                             
+Out[40]: []
+
+In [41]: trust_zone.keys()                                                                                                                                    
+Out[41]: []
+
+In [42]: trust_zone.itertext()                                                                                                                                
+Out[42]: <_elementtree._element_iterator at 0x7f3bd4bdbd58>
+
+In [43]: trust_zone.itertext                                                                                                                                  
+Out[43]: <function Element.itertext()>
+
+In [44]: trust_zone.tag                                                                                                                                       
+Out[44]: 'zones-security-zonename'
+
+In [45]: trust_zone.getiterator                                                                                                                               
+Out[45]: <function Element.getiterator>
+
+In [46]: trust_zone.getiterator()                                                                                                                             
+Out[46]: <_elementtree._element_iterator at 0x7f3bd4bdcfc0>
+
+In [47]: trust_zone.iterfind()                                                                                                                                
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-47-4096e2378cb7> in <module>
+----> 1 trust_zone.iterfind()
+
+TypeError: Required argument 'path' (pos 1) not found
+
+In [48]: trust_zone.itertext()                                                                                                                                
+Out[48]: <_elementtree._element_iterator at 0x7f3bd4bd1258>
+
+In [49]: trust_zone.itertext                                                                                                                                  
+Out[49]: <function Element.itertext()>
+
+In [50]: trust_zone.tail                                                                                                                                      
+Out[50]: '\n                    '
+
+In [51]: trust_zone.tag                                                                                                                                       
+Out[51]: 'zones-security-zonename'
+
+In [52]: trust_zone.text                                                                                                                                      
+Out[52]: 'trust'
+
+In [53]: for trust in trust_zone: 
+    ...:     print(trust.text) 
+    ...:                                                                                                                                                      
+
+In [54]: for trust in trust_zone: 
+    ...:     print(trust_zone.text) 
+    ...:                                                                                                                                                      
+
+In [55]: for child in trust_zone: 
+    ...:     print(child) 
+    ...:                                                                                                                                                      
+
+In [56]: for child in trust_zone: 
+    ...:     print(child.tag) 
+    ...:                                                                                                                                                      
+
+In [57]: trust_zone.text                                                                                                                                      
+Out[57]: 'trust'
+
+In [58]: trustzone = print(trust_zone.text)                                                                                                                   
+trust
+
+In [59]: dir(my_xml)                                                                                                                                          
+Out[59]: 
+['__class__',
+ '__copy__',
+ '__deepcopy__',
+ '__delattr__',
+ '__delitem__',
+ '__dir__',
+ '__doc__',
+ '__eq__',
+ '__format__',
+ '__ge__',
+ '__getattribute__',
+ '__getitem__',
+ '__getstate__',
+ '__gt__',
+ '__hash__',
+ '__init__',
+ '__init_subclass__',
+ '__le__',
+ '__len__',
+ '__lt__',
+ '__ne__',
+ '__new__',
+ '__reduce__',
+ '__reduce_ex__',
+ '__repr__',
+ '__setattr__',
+ '__setitem__',
+ '__setstate__',
+ '__sizeof__',
+ '__str__',
+ '__subclasshook__',
+ 'append',
+ 'attrib',
+ 'clear',
+ 'extend',
+ 'find',
+ 'findall',
+ 'findtext',
+ 'get',
+ 'getchildren',
+ 'getiterator',
+ 'insert',
+ 'items',
+ 'iter',
+ 'iterfind',
+ 'itertext',
+ 'keys',
+ 'makeelement',
+ 'remove',
+ 'set',
+ 'tag',
+ 'tail',
+ 'text']
+
+In [60]: trust_zone.getchildren()                                                                                                                             
+Out[60]: []
+
+In [61]: truzt_zone.getchildren()                                                                                                                             
+Out[61]: 
+[<Element 'zones-security-zonename' at 0x7f3bd5029d18>,
+ <Element 'zones-security-send-reset' at 0x7f3bd52b2a98>,
+ <Element 'zones-security-policy-configurable' at 0x7f3bd52b2728>,
+ <Element 'zones-security-interfaces-bound' at 0x7f3bd4fca638>,
+ <Element 'zones-security-interfaces' at 0x7f3bd4fcaa98>]
+
+In [62]: truzt_zone[0]                                                                                                                                        
+Out[62]: <Element 'zones-security-zonename' at 0x7f3bd5029d18>
+
+In [63]: zonename = truzt_zone[0]                                                                                                                             
+
+In [64]: reset = truzt_zone[1]                                                                                                                                
+
+In [65]: policy = truzt_zone[2]                                                                                                                               
+
+In [66]: intf = truzt_zone[3]                                                                                                                                 
+
+In [67]: intf-bound = truzt_zone[3]                                                                                                                           
+  File "<ipython-input-67-6c867b70f0d6>", line 1
+    intf-bound = truzt_zone[3]
+                              ^
+SyntaxError: can't assign to operator
+
+
+In [68]: intf_bound = truzt_zone[3]                                                                                                                           
+
+In [69]: intf = truzt_zone[4]                                                                                                                                 
+
+In [70]: zonename.tag                                                                                                                                         
+Out[70]: 'zones-security-zonename'
+
+In [71]: zonename.text                                                                                                                                        
+Out[71]: 'trust'
+
+In [72]: reset.text                                                                                                                                           
+Out[72]: 'Off'
+
+In [73]: policy.text                                                                                                                                          
+Out[73]: 'Yes'
+
+In [74]: intf.text                                                                                                                                            
+Out[74]: '\n                                                        '
+
+In [75]: intf_bound.text                                                                                                                                      
+Out[75]: '1'
+
+In [76]: for zonename in truzt_zone: 
+    ...:     print(zonename.text) 
+    ...:                                                                                                                                                      
+trust
+Off
+Yes
+1
+
+                                                        
+
+In [77]: for zoneinfo in truzt_zone: 
+    ...:     print(zoneinfo.text) 
+    ...:                                                                                                                                                      
+trust
+Off
+Yes
+1
+
